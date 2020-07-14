@@ -34,7 +34,7 @@ module.exports.register = async function(req,res){
             }
         }
     }catch(err){
-        return res.status(404).json({
+        return res.status(500).json({
             message: "Server Error"
         })
     }
@@ -54,7 +54,7 @@ module.exports.login = async function(req,res){
             return res.status(200).json({
                 message:'Sign in successfully, here is your token, please keep it safe',
                 data:{
-                    token: jwt.sign(doctor.toJSON(), 'hospitalapi', {expiresIn: 10000})
+                    token: jwt.sign(doctor.toJSON(), 'hospitalapi', {expiresIn: 100000000})
                 }
             });
             

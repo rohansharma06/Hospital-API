@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//--- make schema
 const doctorSchema = new mongoose.Schema({
     username: {
         type:String,

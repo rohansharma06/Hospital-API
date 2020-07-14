@@ -11,10 +11,6 @@ const patientsSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    reports:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'report',
-    }]
 },{
     timestamps: true
 });

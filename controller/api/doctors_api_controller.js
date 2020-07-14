@@ -1,8 +1,9 @@
 const Doctor = require('../../models/doctor');
 const jwt = require('jsonwebtoken');
 
+//---- resister doctor to the database
 module.exports.register = async function(req,res){
-    console.log(req.body);
+    //console.log(req.body);
     try {
         //--If filelds are not enter so show error
         if(!req.body.username || !req.body.password){
@@ -20,16 +21,15 @@ module.exports.register = async function(req,res){
                     password: req.body.password
                 });
                 return res.status(200).json({
-                    
-                    message: "Doctor Register Successfully!"
+                    message: "Doctor Register Successfully!",
+                
                 })
             }
             //---- else show response
             else{
-                //doctor = await doctor.populate('username', 'password').execPopulate();
                 return res.status(200).json({
-                    // data: doctor["_id"],
-                    message: "Doctor username Already exist"
+                    message: "Already exist",
+                
                 })
             }
         }
@@ -41,6 +41,7 @@ module.exports.register = async function(req,res){
     
 };
 
+//---- login
 module.exports.login = async function(req,res){
 
     try{
@@ -61,7 +62,7 @@ module.exports.login = async function(req,res){
         }
     }catch(err){
         return res.status(500).json({
-            message: 'Server Error'
+            message: 'Internal Server Error'
         });
     }
 };

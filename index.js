@@ -4,11 +4,14 @@ const app = express();
 
 const db = require('./config/mongoose');
 
+//---- require passport ans jwt strategy for authentication
 const passport = require('passport');
 const passportJWT = require('./config/passport-jwt-strategy');
 
+//---- to fetch data from url
 app.use(express.urlencoded({extended:true}));
 
+//---- tell app to use passport
 app.use(passport.initialize());
 
 //--- use express router

@@ -1,0 +1,14 @@
+{
+  "name": "hospitalapi",
+  "version": "1.0.0",
+  "description": "an API for the doctors of a Hospital which has been",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rohan Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

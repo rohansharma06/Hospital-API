@@ -17,6 +17,7 @@ module.exports.register = async function (req, res) {
         Patient_Details: {
           name: patient.name,
           phone: patient.phone,
+          id: patient._id,
         },
       });
     } else {
@@ -89,7 +90,10 @@ module.exports.all_reports = async function (req, res) {
       return res.status(200).json({
         message: "Reports",
         All_Report: {
-          patient: { name: patient.name, phone: patient.phone },
+          patient: {
+            name: patient.name,
+            phone: patient.phone,
+          },
           report,
         },
       });

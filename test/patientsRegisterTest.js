@@ -15,7 +15,7 @@ chai.use(chaiHttp);
 describe("Testsing - Patients Register :", () => {
   //---doctor=rohan2 token
   let token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjFlOGE4MTI1NzU2OTIyMjRhM2UyZmQiLCJ1c2VybmFtZSI6InJvaGFuMiIsInBhc3N3b3JkIjoiJDJhJDEwJEJwOVBSOWsub0R4UWJNcGhwaXpQemU2WGQ3U3dzUHI1YjdpQWFSaGFFZGJ4MEY5RW0xdktHIiwiY3JlYXRlZEF0IjoiMjAyMC0wNy0yN1QwODowNDoxNy43NDlaIiwidXBkYXRlZEF0IjoiMjAyMC0wNy0yN1QwODowNDoxNy43NDlaIiwiX192IjowLCJpYXQiOjE1OTU4MzcwNjQsImV4cCI6MTY5NTgzNzA2NH0.vyLLZrdyXN5Tz3TBTG9RJqg2rB2kaFnBhIH-HWGRVLg";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjFlOGE4MTI1NzU2OTIyMjRhM2UyZmQiLCJ1c2VybmFtZSI6InJvaGFuMiIsInBhc3N3b3JkIjoiJDJhJDEwJEJwOVBSOWsub0R4UWJNcGhwaXpQemU2WGQ3U3dzUHI1YjdpQWFSaGFFZGJ4MEY5RW0xdktHIiwiY3JlYXRlZEF0IjoiMjAyMC0wNy0yN1QwODowNDoxNy43NDlaIiwidXBkYXRlZEF0IjoiMjAyMC0wNy0yN1QwODowNDoxNy43NDlaIiwiX192IjowLCJpYXQiOjE1OTU4NDg2NDMsImV4cCI6MTY5NTg0ODY0M30.MBxn2iCC4i2aV2tBTw16IETOTE6QcHyeeT0aD0tQjOw";
   let auth = "bearer " + token;
 
   /*
@@ -98,8 +98,8 @@ describe("Testsing - Patients Register :", () => {
   describe("POST /api/patients/register", () => {
     it("Patient Successfully created:", (done) => {
       let patient = {
-        name: "patient5",
-        phone: 100000005,
+        name: "patient7",
+        phone: 900000007,
       };
 
       chai
@@ -113,9 +113,9 @@ describe("Testsing - Patients Register :", () => {
           res.should.have.status(200);
           res.body.should.be.a("object");
           res.body.should.have.property("message");
-          res.body.should.have.property("Patient");
-          res.body.Patient.should.have.property("name");
-          res.body.Patient.should.have.property("phone");
+          res.body.should.have.property("Patient_Details");
+          res.body.Patient_Details.should.have.property("name");
+          res.body.Patient_Details.should.have.property("phone");
           done();
         });
     });

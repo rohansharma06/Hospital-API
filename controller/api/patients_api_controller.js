@@ -16,14 +16,14 @@ module.exports.register = async function (req, res) {
         Patient: patient,
       });
     } else {
-      return res.status(200).json({
+      return res.status(409).json({
         message: "Patient already registered",
-        Patient: patient,
+        Patient_ID: patient._id,
       });
     }
   } catch (err) {
-    return res.status(500).json({
-      message: "Internal Server Error",
+    return res.status(400).json({
+      message: "Missing Fields!!",
     });
   }
 };

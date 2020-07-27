@@ -30,19 +30,20 @@ module.exports.register = async function (req, res) {
 
 //---- create patient report
 module.exports.create_report = async function (req, res) {
-  //console.log(req.params.id);
+  //console.log("Patient id:", req.params.id);
   //console.log(req.user.id); //--- login doctor id
   //console.log(req.body);
 
   try {
     let patient = await Patients.findById(req.params.id);
+    // console.log("search:", patient._id);
     let doctor = await Doctor.findById(req.user.id);
     if (patient) {
       //---- creating report
       let report = await Report.create({
         status: req.body.status,
         doctor: doctor._id,
-        patient: patient.id,
+        patient: patient._id,
       });
 
       //---- saveing report ref to patients
@@ -59,8 +60,8 @@ module.exports.create_report = async function (req, res) {
       });
     }
   } catch (err) {
-    return res.status(500).json({
-      message: "Internal Server error",
+    return res.status(400).json({
+      message: "Missing Fields!!",
     });
   }
 };

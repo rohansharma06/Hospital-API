@@ -13,6 +13,7 @@ module.exports.register = async function (req, res) {
       let patient = await Patients.create(req.body);
       return res.status(200).json({
         message: "Patient Registered Successfully",
+        data: patient,
       });
     } else {
       return res.status(200).json({

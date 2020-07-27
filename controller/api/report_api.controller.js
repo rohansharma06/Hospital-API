@@ -13,9 +13,10 @@ module.exports.all_report = async function (req, res) {
 
   try {
     //---- find report sort it and populate patient info
-    let report = await Report.find({ status: req.params.status }).sort(
-      "createdAt"
-    );
+    let report = await Report.find({ status: req.params.status })
+      .sort("createdAt")
+      .populate("doctor", "username -_id")
+      .populate("patient", "name phone -_id");
     // .populate('patient');
 
     //---- if report present show reports else give err

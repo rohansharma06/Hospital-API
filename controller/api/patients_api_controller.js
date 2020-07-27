@@ -13,7 +13,11 @@ module.exports.register = async function (req, res) {
       let patient = await Patients.create(req.body);
       return res.status(200).json({
         message: "Patient Registered Successfully",
-        Patient: patient,
+        // Patient: patient,
+        Patient_Details: {
+          name: patient.name,
+          phone: patient.phone,
+        },
       });
     } else {
       return res.status(409).json({
@@ -52,7 +56,11 @@ module.exports.create_report = async function (req, res) {
 
       return res.status(200).json({
         message: " Report Successfully created",
-        Report: report,
+        Report: {
+          Status: report.status,
+          Doctor: doctor.username,
+          Patient: patient.name,
+        },
       });
     } else {
       return res.status(404).json({
@@ -69,20 +77,25 @@ module.exports.create_report = async function (req, res) {
 //---- display all report of patient
 module.exports.all_reports = async function (req, res) {
   //console.log(req.params.id);
-  try {
-    let report = await Report.find({ patient: req.params.id }).sort(
-      "createdAt"
-    );
 
-    if (report) {
+  try {
+    let patient = await Patients.findById(req.params.id);
+
+    if (patient) {
+      let report = await Report.find({ patient: req.params.id })
+        .sort("createdAt")
+        .populate("doctor", "username -_id");
+
       return res.status(200).json({
         message: "Reports",
-        All_Report: report,
+        All_Report: {
+          patient: { name: patient.name, phone: patient.phone },
+          report,
+        },
       });
     } else {
-      return res.status(404).json({
-        message: "No reports Report",
-        data: report,
+      return res.status(500).json({
+        message: "Patient ID incorrect",
       });
     }
   } catch (err) {

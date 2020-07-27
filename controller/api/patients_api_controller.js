@@ -13,12 +13,12 @@ module.exports.register = async function (req, res) {
       let patient = await Patients.create(req.body);
       return res.status(200).json({
         message: "Patient Registered Successfully",
-        data: patient,
+        Patient: patient,
       });
     } else {
       return res.status(200).json({
         message: "Patient already registered",
-        data: patient,
+        Patient: patient,
       });
     }
   } catch (err) {
@@ -51,7 +51,7 @@ module.exports.create_report = async function (req, res) {
 
       return res.status(200).json({
         message: " Report Successfully created",
-        data: report,
+        Report: report,
       });
     } else {
       return res.status(404).json({
@@ -76,7 +76,7 @@ module.exports.all_reports = async function (req, res) {
     if (report) {
       return res.status(200).json({
         message: "Reports",
-        data: report,
+        All_Report: report,
       });
     } else {
       return res.status(404).json({

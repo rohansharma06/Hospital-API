@@ -68,7 +68,8 @@ URL : `http://localhost:8000/api/{routes}`
 
 Pass all the required field and bearer token and test for all different test cases possible.
 
-Result:
+#### Result:
+
 ![test](/assets/image/test.JPG)
 
 ## Getting Started
@@ -78,11 +79,16 @@ Result:
 3. Run following command:
 
    ```
+   npm install bcrypt
    npm install express
    npm install jsonwebtoken
    npm install mongoose
    npm install passport
    npm install passport-jwt
+   npm install morgan
+   npm install chai-http
+   npm install mocha
+   npm install chai
 
    ```
 
@@ -90,4 +96,5 @@ Result:
 5. Open Postman and follow the routes.
 6. Use jwt as header (Authorization: Bearer jwtToken).
 7. Pass require params in form body.
-8. Happy Learning.
+8. Run command: `npm test` for unit-tesing .
+9. Happy Learning.

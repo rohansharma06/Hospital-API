@@ -11,11 +11,11 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 
-describe("Patients Report Testsing:", () => {
+describe("Testsing - Patients Report :", () => {
   let token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjFlMzlhOTkxM2Y3ZDE5ZDRjZTQzY2IiLCJ1c2VybmFtZSI6InJvaGFuMSIsInBhc3N3b3JkIjoiJDJhJDEwJEJLNENKSFpMMThURjRacTJndU9kenVycWZSWEV6aGw5S0ZmaS9nSUhKcWxZcEZIV1BWcXFXIiwiY3JlYXRlZEF0IjoiMjAyMC0wNy0yN1QwMjoxOToyMS4xODRaIiwidXBkYXRlZEF0IjoiMjAyMC0wNy0yN1QwMjoxOToyMS4xODRaIiwiX192IjowLCJpYXQiOjE1OTU4MzEzMDAsImV4cCI6MTY5NTgzMTMwMH0._1lKllJh8PEj3FMsWfDgIgaoDkvBTFt-G_YoN6vye-Y";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjFlOGE4MTI1NzU2OTIyMjRhM2UyZmQiLCJ1c2VybmFtZSI6InJvaGFuMiIsInBhc3N3b3JkIjoiJDJhJDEwJEJwOVBSOWsub0R4UWJNcGhwaXpQemU2WGQ3U3dzUHI1YjdpQWFSaGFFZGJ4MEY5RW0xdktHIiwiY3JlYXRlZEF0IjoiMjAyMC0wNy0yN1QwODowNDoxNy43NDlaIiwidXBkYXRlZEF0IjoiMjAyMC0wNy0yN1QwODowNDoxNy43NDlaIiwiX192IjowLCJpYXQiOjE1OTU4MzcwNjQsImV4cCI6MTY5NTgzNzA2NH0.vyLLZrdyXN5Tz3TBTG9RJqg2rB2kaFnBhIH-HWGRVLg";
   let auth = "bearer " + token;
-  const patientID = "5f1e3946913f7d19d4ce43c8";
+  const patientID = "5f1e8aec2176cc10b8c47118"; //--patient 4
 
   /*
    *----Test case :- Create Patient Report

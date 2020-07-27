@@ -12,9 +12,10 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 
-describe("Patients Register Testsing:", () => {
+describe("Testsing - Patients Register :", () => {
+  //---doctor=rohan2 token
   let token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjFlMzlhOTkxM2Y3ZDE5ZDRjZTQzY2IiLCJ1c2VybmFtZSI6InJvaGFuMSIsInBhc3N3b3JkIjoiJDJhJDEwJEJLNENKSFpMMThURjRacTJndU9kenVycWZSWEV6aGw5S0ZmaS9nSUhKcWxZcEZIV1BWcXFXIiwiY3JlYXRlZEF0IjoiMjAyMC0wNy0yN1QwMjoxOToyMS4xODRaIiwidXBkYXRlZEF0IjoiMjAyMC0wNy0yN1QwMjoxOToyMS4xODRaIiwiX192IjowLCJpYXQiOjE1OTU4MzEzMDAsImV4cCI6MTY5NTgzMTMwMH0._1lKllJh8PEj3FMsWfDgIgaoDkvBTFt-G_YoN6vye-Y";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjFlOGE4MTI1NzU2OTIyMjRhM2UyZmQiLCJ1c2VybmFtZSI6InJvaGFuMiIsInBhc3N3b3JkIjoiJDJhJDEwJEJwOVBSOWsub0R4UWJNcGhwaXpQemU2WGQ3U3dzUHI1YjdpQWFSaGFFZGJ4MEY5RW0xdktHIiwiY3JlYXRlZEF0IjoiMjAyMC0wNy0yN1QwODowNDoxNy43NDlaIiwidXBkYXRlZEF0IjoiMjAyMC0wNy0yN1QwODowNDoxNy43NDlaIiwiX192IjowLCJpYXQiOjE1OTU4MzcwNjQsImV4cCI6MTY5NTgzNzA2NH0.vyLLZrdyXN5Tz3TBTG9RJqg2rB2kaFnBhIH-HWGRVLg";
   let auth = "bearer " + token;
 
   /*
@@ -70,8 +71,8 @@ describe("Patients Register Testsing:", () => {
   describe("POST /api/patients/register", () => {
     it("Notify that patient already exist:", (done) => {
       let patient = {
-        name: "patient4",
-        phone: 100000004,
+        name: "patient3",
+        phone: 100000003,
       };
 
       chai
